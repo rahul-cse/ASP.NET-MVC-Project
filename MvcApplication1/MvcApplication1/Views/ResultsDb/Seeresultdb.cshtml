@@ -1,0 +1,88 @@
+﻿@model IEnumerable<MvcApplication1.Models.SearchResult>
+
+@{
+    ViewBag.Title = "Seeresultdb";
+
+}
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<h2>Seeresultdb</h2>
+
+<div class="container">
+    @using (Html.BeginForm())
+    {
+
+        <table class="table-condensed">
+               <tr>
+                <td width="150px">
+                    @Html.Label("Student ID")
+
+                </td>
+                <td>
+                    @Html.TextBox("StudentId")   
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px "></td>
+                <td>
+                    <input class="btn btn-primary" type="submit" value="  Search " style="width:auto" />
+                </td>
+            </tr>
+        </table>
+    }
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <div>
+            <ul>
+                <li>
+                    @item.FirstName
+                </li>
+                <li>
+                    @item.LastName
+                </li>
+                <li>
+                    @item.Class;
+                    @item.Bengali
+                    @item.English
+                    @item.Mathematics
+                    @item.Science
+                    @item.Religion
+                    @item.Bangladesh_and_Global_Studies
+
+                </li>
+                <li>
+                    @item.Gpa
+                </li>
+            </ul>
+            @using (Html.BeginForm("Createpdf", "ResultsDb", FormMethod.Post))
+            {
+                <ul>
+                    <li>
+                        
+                        @Html.Hidden("FirstName", @item.FirstName)
+                        @Html.Hidden("LastName", @item.LastName)
+                        @Html.Hidden("Class", @item.Class)
+                    </li>
+                     <li>
+                         @Html.Hidden("Bengali", @item.Bengali)
+                         @Html.Hidden("English", @item.English)
+                         @Html.Hidden("Mathematics", @item.Mathematics)
+                         @Html.Hidden("Science", @item.Science)
+                         @Html.Hidden("Religion", @item.Religion)
+                         @Html.Hidden("Bangladesh_and_Global_Studies", @item.Bangladesh_and_Global_Studies)
+                        @Html.Hidden("Gpa", @item.Gpa)
+                        @*@Html.TextBox("Bengali", @item.Bengali )*@
+                    </li>
+                </ul>
+                <input class="btn btn-primary" type="submit" value="Create Pdf" />
+            }
+          
+        </div>
+    }
+</div>

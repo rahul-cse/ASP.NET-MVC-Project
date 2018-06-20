@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcDatabase1Model3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ResultDatabaseClass6">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="bigint" Nullable="false" />
+    <Property Name="Term" Type="nchar" MaxLength="10" />
+    <Property Name="Bengali1st" Type="int" />
+    <Property Name="English1st" Type="int" />
+    <Property Name="Mathematics" Type="int" />
+    <Property Name="Science" Type="int" />
+    <Property Name="Bangladesh_and_Global_Studies " Type="int" />
+    <Property Name="Religion" Type="int" />
+    <Property Name="Drawing" Type="int" />
+    <Property Name="Physical_Education" Type="int" />
+    <Property Name="ICT" Type="int" />
+    <Property Name="Bengali2nd" Type="int" />
+    <Property Name="English2nd" Type="int" />
+    <Property Name="TotalMarks" Type="int" />
+    <Property Name="Gpa" Type="float" />
+    <Property Name="TotalSubject" Type="int" />
+  </EntityType>
+  <EntityContainer Name="MvcDatabase1Model3StoreContainer">
+    <EntitySet Name="ResultDatabaseClass6" EntityType="Self.ResultDatabaseClass6" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

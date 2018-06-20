@@ -1,0 +1,137 @@
+﻿@model MvcApplication1.Models.Results_Information_viewmodel
+
+@*{
+        ViewBag.Title = "Insertresultdb";
+    }*@
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+
+
+<div class="container">
+    <h2 style="text-align:center ">Insert and Calculate Students Results</h2><br /><br />
+
+        @using (Html.BeginForm("Insertresultdb", "ResultsDb", FormMethod.Post))
+        {
+            <table class="table-condensed">
+
+
+                <tr>
+                    <td style="width :150px ">
+
+                        @Html.Label("StudentID")
+                    </td>
+                    <td style="width :200px ">
+                        @Html.TextBoxFor(model => model.StudentId, new { @Value = ViewBag.sid })
+                    </td>
+
+                </tr>
+                <tr>
+                    <td style="width :150px ">
+                        @Html.Label("Select Subject")
+                    </td>
+                    <td>
+                        @Html.DropDownList("subject", new List<SelectListItem>{
+                    new SelectListItem {Text="Bengali",Value="Bengali"},
+                    new SelectListItem {Text="English",Value="English"},
+                    new SelectListItem {Text="Mathematics",Value="Mathematics"},
+                    new SelectListItem {Text="Bangladesh and Global Studies",Value="Bangladesh_and_Global_Studies"},
+                    new SelectListItem {Text="Science",Value="Science"},
+                    new SelectListItem {Text="Religion",Value="Religion"}
+
+                    }, "")
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width :150px ">
+
+                        @Html.Label("Marks")
+                    </td>
+                    <td style="width :200px ">
+                        @Html.TextBox("Marks")
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="width :150px "></td>
+                    <td>
+                        <input class="btn btn-primary" type="submit" value="  Save " name="submit" style="width:150px" />
+                    </td>
+                </tr>
+            </table>
+                @*<tr>
+                    <td style="width :150px "></td>
+                    <td>
+                        <input class="btn btn-danger" type="submit" value="  Calculate " name="calculate" style="width:150px" />
+                    </td>
+                </tr>*@
+                    
+
+                       
+                }
+
+@using (Html.BeginForm("Calculateresultdb", "ResultsDb", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td style="width :150px "></td>
+            <td>
+                <input class="btn btn-danger" type="submit" value="  Calculate "  style="width:150px" />
+            </td>
+        </tr>
+        <tr>
+            @*<td>@Html.LabelFor(model => model.Gpa, new { @Value = ViewBag.gpa })  </td>*@
+        </tr>
+    </table>
+    <br />
+    <p id="demo1"></p>
+    <p id ="demo2"></p>
+    <p id="calculation"></p>
+}
+    
+
+
+</div>
+
+
+
+
+
+            @if (ViewBag.Subject != null)
+{
+
+                <script>
+
+                    //localStorage.setItem(i);
+                    marks = "@ViewBag.Subject";
+
+                        document.getElementById("demo1").innerHTML = marks;
+                        var every = "@ViewBag.x";
+                    
+                    
+                </script>
+}
+        @if (ViewBag.x == 6)
+        {
+            <script>
+                document.getElementById("demo2").innerHTML = "You have successfully entered the marks of all subjects";
+                document.getElementById("demo2").style.color = "red";
+            </script>
+        }
+
+            @if (ViewBag.gpa_ != null)
+{
+                <script>
+                    $(document).ready(function () {
+                        //document.write("@ViewBag.gpa_");
+
+                        var x = "@ViewBag.gpa_";
+                        document.getElementById("calculation").innerHTML = x;
+                    });
+
+
+                </script>
+}

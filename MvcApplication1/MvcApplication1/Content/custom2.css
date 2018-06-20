@@ -1,0 +1,22 @@
+﻿body {
+}
+.Notice{
+    color:#ffffff;
+    padding: 2px ;
+    background-color:#1d96d4;
+    text-align:center;
+    font-size:14px;
+    width: inherit;
+
+}
+
+.noticeboard a{
+    color:#000000;
+}
+.btn.btn-primary a{
+    color:#ffffff;
+}
+.btn.btn-primary a:hover{
+ 
+  text-decoration:none;
+}

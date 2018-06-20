@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcDatabase1Model2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ResultDatabaseClass5">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int64" Nullable="false" />
+    <Property Name="Term" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Bengali" Type="Int32" />
+    <Property Name="English" Type="Int32" />
+    <Property Name="Mathematics" Type="Int32" />
+    <Property Name="Bangladesh_and_Global_Studies" Type="Int32" />
+    <Property Name="Science" Type="Int32" />
+    <Property Name="Religion" Type="Int32" />
+    <Property Name="TotalMarks" Type="Int32" />
+    <Property Name="Gpa" Type="Double" Nullable="false" />
+    <Property Name="TotalSubject" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MvcDatabase1Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ResultDatabaseClass5" EntityType="Self.ResultDatabaseClass5" />
+  </EntityContainer>
+</Schema>

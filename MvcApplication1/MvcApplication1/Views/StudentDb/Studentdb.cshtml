@@ -1,0 +1,25 @@
+﻿@model MvcApplication1.Models.Student_information_viewmodel
+
+@{
+    ViewBag.Title = "Studentdb";
+}
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class=" container">
+    <h2>Student Information</h2>
+    @using (Html.BeginForm("Studentdb","StudentDb",FormMethod.Get))
+    {
+    @Html.Label("Student ID:")
+    @Html.TextBox("search")<br />
+    <input class="btn btn-primary " type="submit" value="Search" /><br />
+    }
+
+    @if (Model != null)
+    {
+        <ul class=" list-group">
+            <li class=" list-group-item">Student Id : @Model.StudentId</li>
+            <li class=" list-group-item">First Name : @Model.FirstName</li>
+            <li class=" list-group-item">Last Name : @Model.LastName</li>
+            <li class=" list-group-item">Class : @Model.Class</li>
+        </ul>
+    }
+</div>

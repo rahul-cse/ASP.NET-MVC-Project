@@ -1,0 +1,122 @@
+﻿@model MvcApplication1.MvcDatabase1Entities
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>School Information and Result Management System</title>
+
+    <!-- Bootstrap -->
+
+    <link href="~/Content/custom1.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @RenderSection("head", false)
+
+
+</head>
+<body>
+
+
+
+
+
+    <div class=" = navbar navbar-default " role="navigation">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left ">
+
+                    @*<li class="modal-content"><a href="#">Students Results</a></li>*@
+                    <li class="modal-content">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="modal-content  dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Result List<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            @*<li>@Html.ActionLink("See Results", "Seeresultdb", "ResultsDb")</li>
+                                <li>@Html.ActionLink("Insert Results", "InsertId", "ResultsDb")</li>*@
+                            <li>@Html.ActionLink("Class 5 ", "class5result", "userseeresult")</li>
+                            <li>@Html.ActionLink("Class 6 ", "class6result", "userseeresult6")</li>
+                        </ul>
+                    </li>
+
+                    <li class="modal-content  dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students Database<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Student Information", "ustudb", "userstudentdb")</li>
+
+                            <li><a href="#">Students Admission Form</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="modal-content">@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="modal-content">@Html.ActionLink("Contact us", "Contact", "Home")</li>
+                </ul>
+            </div>
+        </div>
+       
+    </div>
+    @RenderBody()
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <div class="container">
+       
+        <div class="navbar navbar-inverse ">
+
+            <div class="navbar-text pull-left">
+                Copyright &copy; RBsoftware 2017
+            </div>
+            <div class="navbar-text  ">
+
+                <ul>
+                    <li>Our School</li>
+                    <li>School Boundaries</li>
+                </ul>
+
+
+
+            </div>
+            <div class="navbar-text  ">
+
+                <ul>
+                    <li>Result List</li>
+                    <li>Result Search</li>
+                </ul>
+
+
+
+            </div>
+            <div class="navbar-text  ">
+
+                <ul>
+                    <li>Mobile: 01850000999</li>
+                    <li>Address: Rahman Nagar, Chittagong.</li>
+                    Chittagong, 4100
+                </ul>
+
+            </div>
+            <div class="navbar-text pull-right">
+
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAQRSURBVEhLlVZdbBRVFF70RUnwyRdjVHzwjQRhtezs7LbGWAU0Arrd7sx0t6RVFMUIfdAYHxpIChr/Qlt25s4ubReLFUNIqkBKINhEhNJGg9hYaMQoFHFXMUCqwXTL8Tt3f7pL93eSk52de+d85+c73x2Ho9qrvf2OhoYv7qz2tbL7XT7zflU3WxXd6nfr1qiiWedxPwkbd2vmUVWPdOC+1uGgBWWdFdpQp4l73Zq13a3bU95QH3mb98Bi5An1Spt7toewZxZ2TNXFqqrAlED4SbcRGa+Fc0+whx3BRFFTjYgMBO8kkeXOuubeu8oCKgHTB6fTHHEp54XWMoCKLr50t0QXFQVzaaIO0U9zFjV+k5au66rKlr3QLbOvXc/ltAYKksaJnnCjPcFecgUsWrupnz6JfUtde09RV38J43VYN+ztj4bSVbDJm/KzeV5WSLfDG4rJjY81hKmz/yRVe8WvTtPKDX0yULUpip7ZCTUoHsyCeQ3rPjAsrhpYTAN1fzZSEieZnKXTZy/RV19P0Ch++bqcuEHPboxJIPZTu/5TLuG2LJASEC2ZbDJAXI5i18zMLHWIYXoUPVlc/wH52wZSQPEbtPrVOSAmFNox7nxOLJRg+LNX0jNNYS5dKaCffk7QioBJT7X2UHhghIZOTKaBrucBMQsVw55BxZangcQYD2OlQKM/Tsls2t4/nJf0VDwfiBmY8ms1OrBzASTkPE97OaCb/yXpzLkrFNk/Rk5fmFrePUAjP1yiiQsJCTgfSEgg+H/d0Q6RVAwxWQkQ9+CJ5igtWdNJkBuqaTTpkZUf01sfDpUEchnWG1w6ZCTGc5WgWI/+vv4vbQsfp+Z39ktmrXolRm9uPwjmnSsJ5Dasl2SP3Jo4Vg0ZTp25SMte3EVt75XpkWFLAQbQ0ymggLUjJRsp4SzHuhPf/yaBNu84VJIMnuBuwnxe9Tb2PCCBVE14MMW3MipdDuib736tCIiDBxEGswPL4gcKDrPOZTKy9p0uOrDMNFm62+j917V/8pTBE8IRY4jn8/SO64iMbiEzetwflgJ58co1Oe2XMR8Z+x0yM3h8gpb7dtHGrYPZdX4+PPaLZCUEQB6M+D1SUMEVzezMkII3P/NyH60Gs/IMElPf2gsn0LJgZG4Nz+tCEcnG9GH5p+KPLil4Jrl8++5G8w7yyapgqjkz7tftxvPDJXYhmNy1FXguy2/YN1GdNSVP2Rpj5z2I9nNOPRVZ8SM8dy17nOsi4QrY68oe5XID1AJOtqCRf8iPEoCyo3nfDjwnoDDvUZt2Y499qMbfubQykJxd3ib7YVW3t+KD4yzUI8m6lWvpXsQR1AFUYS0HWDVI7gvODWKhR4841YDtB2Fec2nmJgTQqjZF6hU9+lAlzv8H3oxCqXKUQFMAAAAASUVORK5CYII=" />
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAARHSURBVEhLnVZNbBtVEE7CBSrBiQtCgLgjIcEVgYREVUTIn9+uf4JUQTggSiWQkDhaaVXgAAdAPYEEByCx98eJGydBLQKKUKCtCpQUSAqHqkHF8b7dtb3OJv4bZt5m43W8sWNWerK8+958M998M/MGBvp9kskhKQ139Hus536WMu5nqjEVUfnnkmJeYgpfkxS+LqnmKv6el1XrjKyaTw4ADPY0FrYhni3di4beZpq1EV/YgcRiHeK5KsTObeNywX9H7yXNakiqfSGq8Gf7AmOpwtOyXlwlI7HsFhkCjODAhXshkatBNFOsszT/4Pg3cGdPQKYZTFIthzzuZjzsWzRTEpEjvdmRucLdB4Ix3XxK0mwnlq30DbIHjNELOhVzJlQ0IiequRbLunsgrAtdY2kOz814ayJtAu2dUHbpRTDKJUsbr3dEhdyeCdLF8NBICo34hwOgo/h+6pwN7/5QhlMXSxDXLRiZ5XB83hKAFF00UwZZszeltPngHti45tyHvOZl5Jg20eYXMhZ8fLUCCd0D9KkZR+/f+roI/5Tq4D/X8jVY/msbzl5x2iifXG6CrPJTe0CSbr0UR9X4xiiKE0s2uLUm/LSxA6/kbEHRMHo9jpT9hobDHuV3F6Ka5yjZ2mVodfgKHBFgEc34IrHUaOUGgSiiv03Pa2OrAanrLrx5vggnl23YrDQ6cG4W60inBZEA1cQQ0leTNesxAcRUfpmK0Y+IPJrMmLB4YxuazZbNWqMJeacBVfzd/6zcqsLwjNGuVhQF2WUpHsXOAYOY+DVSiQ9EXr2YteAWennYZ+5PF8YCufRsodQpJUrhxEAyCUMItB4Eok2U9I8uOVDe6fQ+DPz092UYwzPthewByWnjJBIHg4i8Gl9oRUSbKaoYJvbq7WrPoNZ5DSWOIthfClS8CISl87KfowuimvcVaETh8NmvFXCqB0dVR11Mf1cKoQ2jE4XrotP2UU91Cn9nMqA6H/B5lPOxLzm8v1IG0+1UGmnik58rMJoKb7ix+QpKnfNoZusBASTppSdkrdj0uzTRRrXz6S8V+BHryHI7I9rAgn1vxREgHZTtMkPOI9B8q2BxYuLs+ZbC9DsDcT6N7SWHEr++WYMbWFN/GDW4eHMHzl52hCqpgA8CIcVR32SaOdLW76KKcVTW7SbNFh+M+hcZoxaEUxT7nvefukSnwtrpE10hzb8K7eCSyj8Uut836MhropNWt47u55Zyg+OmIGvlR0JnEks178LmukAKxNbxv2aSN5Ht7YhujnadsscWjXuYYsxS6OJQl5kU/Ia0i4FHowEvNOM9RzltSAIMSYr1Bib038QSXkoQVIwQQWlrUdREEwFE53BEaFZOns0/eiiQ4CaWuv0w3oKmkc5rTOP1+EJVVDotcSMSEVt5WbX1CdUaS+Kdr2+Q4IHhLByRMoXHsQRkphVeRWpeY6o1xTT7mQnVfOgwxv8DsUIsOeVYuMQAAAAASUVORK5CYII=" />
+
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAARLSURBVEhLnVZdaBxVFJ7GFxX0yRcRFd/FQGNrTObOJNsm2Z2ZbFJt2qpFoY0KrUWLiNoKwZQqFETaWhEjgmJR/KMtVi1NwScfaqm25KE7d2Z2N93Nbma7tC5JjO7P6Tl3dpfJZpPJOnDZZffc+53vu985ZySpxWdMktq+HZHuaHFbcHhM73zA1NhurslfcZ1d5LoS4xozLY1N4ed5R1MPO1GmgCStCz6tSUTaUO8zNeU921BSM0O9MDsUggx+pqPemsFFv9GydaWMa9IylEhLYNcGWSiuK1OzwyFIDfbQQWCtsuKGCllMAveUzAg7GlfVOwMBzbC8FVnMUcarHd7svwQCEkNLZ2dy0a57VgRzDFl1dGXuOrJoFaQWT+yzCMY15WsYGVlummt4J3TRJNX/BfGD0T0is9eWsUJnHc40lYsB738SzE0bgG9+AqyIvKZEEoMqOIbq2kb3Q3WwxAC7Hx02Sxr72fBwN5ihx8HZpsH0nhcgOboDOALxPgQMMAj9n0MzoYTjdSBTV3aRaxpBbKMH8l9OQDHnAj2VYhEWrlyG1Bt7gZJYAqaxZeBkKFRqKm103C3AsPBOusItVRvTJlx/nz0lAP7LpMX3+Yu/Q6lwC2YOHRBy1uL5QJcnawNLsr1jsCI32HoBZOvsDyrG+kY8JH1wvwBZ+OsSOCMRiMntEGPtYG/ZLD7N0AYRb/Z2QPqtVyF/8nME2wiWjyk5kM7lEbZdApDWkds8l3iMeF8n3Dz1nQAimUx1PSR2bQf34w/BPXYE3BMfQPbIOFiD2CXeeR3m/7wE5X8WIDfxEcR3GHXDeFYXQHslGJPaqHc1AhXO/wyVchmSLz4rss6gXP6nlL8B9lP9cPP09wKEnn9T05B86TngA9791YE0eZ9EzdDWlCl/JyBGuU+Ois25T4+jbI+BFQ1B8uWdMIMMyvNzsMhjYAsVVMh/MQGLNvfY+JzrYzRaNYMy6bWOqhlQ5/jOYSi6WaiUSgKUpEuOPgOFyV9EAjc+OyEkJiM4CEBJCCf63EdAqWgPmGHW7wHpyvsuen6JvfGQ9Jv76tb2y1a4cA5siq8W70qum8Yug6Mlz4fYg57rDFXGKq40dmm+aSMknn8aL/k4FC78CrfO/ACZ8bcxazRMuCuwaEXJaOx0vWCp+WEF/0Y0G2uB5CEzUIcwe73FIw3F2qRL1GRDtaJL+p2DOmLnrjjGCrOnWsRraT0UQ+bC5M817eDYbY+R74MGXRAYjRlMOoeOfLTpTJre2nkXUv2JHIiBgXfQDJDkR1UWHY0NrTplzXD4XjzgG6J+vcmdrcQGzSSmq6OrrqV3bwkc5RQAY2Nt6MT9yCpLmwmUGiRJWpO19p0sTDFJMX/Y2Zje3b4mEH8QvqQ8Yuvqu1gLV9GmJWqQdIe1RYwRcBbZ/MgNeZje+VoG8W+geWLpcge6aBsOyD0I/IqN73p2ROlztN6H13L4bdVH9kf9SJ0PAAAAAElFTkSuQmCC" />
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

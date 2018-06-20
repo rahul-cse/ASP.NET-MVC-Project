@@ -1,0 +1,59 @@
+﻿@model MvcApplication1.Models.Results_Information_viewmodel
+
+@{
+    ViewBag.Title = "InsertId";
+}
+
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class=" container">
+    <h2 style="text-align:center ">Insert Student Information</h2><br /><br />
+    @using (Html.BeginForm())
+    {
+
+        <table class="table-condensed">
+            <tr >
+                <td style="width :150px ">
+
+                    @Html.Label("Student ID")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextBoxFor(model => model.StudentId)
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px ">
+
+                    @Html.Label("Class")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextBox("Classname")
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px ">
+                    @Html.Label("Select Terminal")
+                </td>
+                <td>
+                    @Html.DropDownListFor(model => model.Term, new List<SelectListItem>{
+                    new SelectListItem {Text="Half",Value="Half"},
+                    new SelectListItem {Text="Final",Value="Final"}
+
+                    }, "")
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px "></td>
+                <td>
+                    <input class="btn btn-primary" type="submit" value="  Insert " style="width:auto" />
+                </td>
+            </tr>
+            </table>
+        
+    }
+
+</div>
+

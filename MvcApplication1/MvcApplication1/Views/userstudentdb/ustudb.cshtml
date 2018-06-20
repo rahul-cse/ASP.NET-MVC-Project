@@ -1,0 +1,36 @@
+﻿@model MvcApplication1.Models.Student_information_viewmodel
+
+@{
+    ViewBag.Title = "ustudb";
+}
+<link href="~/Content/custom2.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+<div class="container">
+
+    <h2>Students Information</h2>
+    @using (Html.BeginForm("ustudb", "userstudentdb", FormMethod.Get))
+    {
+        @Html.Label("Student ID:")
+        @Html.TextBox("search")<br />
+        <input class="btn btn-primary " type="submit" value="Search" /><br />
+    }
+
+    @if (Model != null)
+    {
+        <ul class=" list-group">
+            <li class=" list-group-item">Student Id : <b>@Model.StudentId</b></li>
+            <li class=" list-group-item">First Name :<b> @Model.FirstName</b></li>
+            <li class=" list-group-item">Last Name : <b>@Model.LastName</b></li>
+            <li class=" list-group-item">Class : <b>@Model.Class</b></li>
+            <li class=" list-group-item">Present Address :<b> @Model.PresentAddress</b></li>
+        </ul>
+    }
+    
+    @*<input class="btn btn-primary " type="submit" value="Go To Homepage" /><br />*@
+    <div class="btn btn-primary" role="navigation">
+
+     @Html.ActionLink("Go To Homepage", "Index", "Home")
+       
+    </div>
+
+</div>

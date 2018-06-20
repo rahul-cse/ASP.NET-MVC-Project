@@ -1,0 +1,165 @@
+﻿@model IEnumerable<MvcApplication1.Models.SearchResult6>
+
+@{
+    ViewBag.Title = "class6result";
+}
+
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/custom2.css" rel="stylesheet" />
+
+
+
+
+
+<h2 style="text-align:center ">Results of Class Six</h2>
+
+<div class="container">
+
+    @using (Html.BeginForm())
+    {
+
+        <table class="table-condensed">
+            <tr>
+                <td width="150px">
+                    @Html.Label("Student ID")
+
+                </td>
+                <td>
+                    @Html.TextBox("StudentId")
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px "></td>
+                <td style="width:460px">
+                    <input class="btn btn-primary" type="submit" value="  Search " style="width:auto" />
+                </td>
+
+                <td>
+                    <marquee style="color:#00ff21">You can download result as PDF format.</marquee>
+                </td>
+                <td class="btn btn-primary">
+                    @Html.ActionLink("Go To Homepage", "Index", "Home")
+                </td>
+            </tr>
+        </table>
+    }
+    
+@foreach (var item in Model)
+{
+    <div>
+        <table class="table-bordered">
+            <tr>
+                <td>
+                    Name:
+                    @item.FirstName
+                    @item.LastName
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Class : @item.Class
+
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Bengali1st : @item.Bengali1st
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Bengali2nd : @item.Bengali2nd
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    English1st : @item.English1st
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    English2nd : @item.English2nd
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Mathematics : @item.Mathematics
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Science : @item.Science
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Religion : @item.Religion
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Drawing : @item.Drawing
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Bangladesh and Global Studies : @item.Bangladesh_and_Global_Studies
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Physical Education : @item.Physical_Education
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Information and Communication Technology : @item.ICT
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Total Gpa : @item.Gpa
+                </td>
+            </tr>
+
+
+
+
+
+        </table>
+    </div>
+    using (Html.BeginForm("Createpdf", "userseeresult6", FormMethod.Post))
+    {
+          
+
+        @Html.Hidden("FirstName", @item.FirstName)
+        @Html.Hidden("LastName", @item.LastName)
+        @Html.Hidden("Class", @item.Class)
+        //  </li>
+        // <li>
+        @Html.Hidden("Bengali1st", @item.Bengali1st)
+        @Html.Hidden("Bengali2nd", @item.Bengali2nd)
+
+        @Html.Hidden("English1st", @item.English1st)
+        @Html.Hidden("English2nd", @item.English2nd)
+        @Html.Hidden("Mathematics", @item.Mathematics)
+        @Html.Hidden("Science", @item.Science)
+        @Html.Hidden("Religion", @item.Religion)
+        @Html.Hidden("Bangladesh_and_Global_Studies", @item.Bangladesh_and_Global_Studies)
+        @Html.Hidden("Drawing", @item.Drawing)
+        @Html.Hidden("Physical_Education", @item.Physical_Education)
+        @Html.Hidden("ICT", @item.ICT)
+
+        @Html.Hidden("Gpa", @item.Gpa)
+       
+        //</li>
+        // </ul>
+        <input class="btn btn-danger" type="submit" value="Download Result" />
+    }
+}
+
+    </div>

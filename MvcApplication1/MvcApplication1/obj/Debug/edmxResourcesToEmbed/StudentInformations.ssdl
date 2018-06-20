@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcDatabase1Model1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="StudentsInfo">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="bigint" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Class" Type="smallint" Nullable="false" />
+    <Property Name="DateOfBirth" Type="date" Nullable="false" />
+    <Property Name="Group" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="PresentAddress" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="MvcDatabase1Model1StoreContainer">
+    <EntitySet Name="StudentsInfo" EntityType="Self.StudentsInfo" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

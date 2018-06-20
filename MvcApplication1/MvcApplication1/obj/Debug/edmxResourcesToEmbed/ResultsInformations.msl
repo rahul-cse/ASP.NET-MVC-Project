@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcDatabase1Model2StoreContainer" CdmEntityContainer="MvcDatabase1Entities2">
+    <EntitySetMapping Name="ResultDatabaseClass5">
+      <EntityTypeMapping TypeName="MvcDatabase1Model2.ResultDatabaseClass5">
+        <MappingFragment StoreEntitySet="ResultDatabaseClass5">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Bengali" ColumnName="Bengali" />
+          <ScalarProperty Name="English" ColumnName="English" />
+          <ScalarProperty Name="Mathematics" ColumnName="Mathematics" />
+          <ScalarProperty Name="Bangladesh_and_Global_Studies" ColumnName="Bangladesh_and_Global_Studies" />
+          <ScalarProperty Name="Science" ColumnName="Science" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="Gpa" ColumnName="Gpa" />
+          <ScalarProperty Name="TotalSubject" ColumnName="TotalSubject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

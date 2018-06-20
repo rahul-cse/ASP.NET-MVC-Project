@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MvcDatabase1Model3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ResultDatabaseClass6">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="bigint" Nullable="false" />
+          <Property Name="Term" Type="nchar" MaxLength="10" />
+          <Property Name="Bengali1st" Type="int" />
+          <Property Name="English1st" Type="int" />
+          <Property Name="Mathematics" Type="int" />
+          <Property Name="Science" Type="int" />
+          <Property Name="Bangladesh_and_Global_Studies " Type="int" />
+          <Property Name="Religion" Type="int" />
+          <Property Name="Drawing" Type="int" />
+          <Property Name="Physical_Education" Type="int" />
+          <Property Name="ICT" Type="int" />
+          <Property Name="Bengali2nd" Type="int" />
+          <Property Name="English2nd" Type="int" />
+          <Property Name="TotalMarks" Type="int" />
+          <Property Name="Gpa" Type="float" />
+          <Property Name="TotalSubject" Type="int" />
+        </EntityType>
+        <EntityContainer Name="MvcDatabase1Model3StoreContainer">
+          <EntitySet Name="ResultDatabaseClass6" EntityType="Self.ResultDatabaseClass6" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MvcDatabase1Model3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ResultDatabaseClass6">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int64" Nullable="false" />
+          <Property Name="Term" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Bengali1st" Type="Int32" />
+          <Property Name="English1st" Type="Int32" />
+          <Property Name="Mathematics" Type="Int32" />
+          <Property Name="Science" Type="Int32" />
+          <Property Name="Bangladesh_and_Global_Studies" Type="Int32" />
+          <Property Name="Religion" Type="Int32" />
+          <Property Name="Drawing" Type="Int32" />
+          <Property Name="Physical_Education" Type="Int32" />
+          <Property Name="ICT" Type="Int32" />
+          <Property Name="Bengali2nd" Type="Int32" />
+          <Property Name="English2nd" Type="Int32" />
+          <Property Name="TotalMarks" Type="Int32" />
+          <Property Name="Gpa" Type="Double" />
+          <Property Name="TotalSubject" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="MvcDatabase1Entities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ResultDatabaseClass6" EntityType="Self.ResultDatabaseClass6" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MvcDatabase1Model3StoreContainer" CdmEntityContainer="MvcDatabase1Entities3">
+          <EntitySetMapping Name="ResultDatabaseClass6">
+            <EntityTypeMapping TypeName="MvcDatabase1Model3.ResultDatabaseClass6">
+              <MappingFragment StoreEntitySet="ResultDatabaseClass6">
+                <ScalarProperty Name="Physical_Education" ColumnName="Physical_Education" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+                <ScalarProperty Name="Term" ColumnName="Term" />
+                <ScalarProperty Name="Bengali1st" ColumnName="Bengali1st" />
+                <ScalarProperty Name="English1st" ColumnName="English1st" />
+                <ScalarProperty Name="Mathematics" ColumnName="Mathematics" />
+                <ScalarProperty Name="Science" ColumnName="Science" />
+                <ScalarProperty Name="Bangladesh_and_Global_Studies" ColumnName="Bangladesh_and_Global_Studies " />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Drawing" ColumnName="Drawing" />
+                <ScalarProperty Name="ICT" ColumnName="ICT" />
+                <ScalarProperty Name="Bengali2nd" ColumnName="Bengali2nd" />
+                <ScalarProperty Name="English2nd" ColumnName="English2nd" />
+                <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+                <ScalarProperty Name="Gpa" ColumnName="Gpa" />
+                <ScalarProperty Name="TotalSubject" ColumnName="TotalSubject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿body {
+
+
+}
+ul.nav.navbar-nav.navbar-left a{
+    color:#000000;
+
+}
+
+
+li.modal-content{
+    background-color:lightgray;
+    width:200px;
+    text-align:center;
+}
+
+.btn.btn-primary {
+    font-family :Arial;
+}
+
+
+.item {
+   text-align:center; 
+}
+
+

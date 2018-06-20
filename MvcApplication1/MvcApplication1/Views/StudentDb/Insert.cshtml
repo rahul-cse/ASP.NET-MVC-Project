@@ -1,0 +1,126 @@
+﻿@model MvcApplication1.Models.Student_information_viewmodel
+@{
+    ViewBag.Title = "Insert";
+}
+<link href="~/Content/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.8.2.js"></script>
+<link href="~/Content/jquery-ui.min.css" rel="stylesheet" />
+<link href="~/Content/custom1.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-ui.min.js"></script>
+
+
+
+
+
+<div class="container">
+ 
+
+    <h2 style="text-align:center ">Insert New Student Information</h2><br />
+    @using (Html.BeginForm("Insert", "StudentDb", FormMethod.Post))
+    {
+        <table class ="table-condensed">
+            <tr>
+                <td style="width :100px ">
+                    @Html.Label("Student ID")
+                </td>
+
+                <td style="width :200px ">
+                    @Html.TextBoxFor(model => model.StudentId)
+                </td>
+            </tr>
+            <tr>
+                <td style="width :100px ">
+
+                    @Html.Label("First Name")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextBoxFor(model => model.FirstName)
+                </td>
+            </tr>
+            <tr>
+                <td style="width :100px ">
+                    @Html.Label("Last Name")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextBoxFor(model => model.LastName)
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :100px ">
+                    @Html.Label("Class")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextBoxFor(model => model.Class)
+                </td>
+            </tr>
+            <tr>
+                <td style ="width :100px ">
+                    @Html.Label("Select Group")
+                </td>
+                <td>
+                    @Html.DropDownListFor(model => model.Group, new List<SelectListItem>{
+                    new SelectListItem {Text="Science",Value="Science"}, 
+                    new SelectListItem {Text="Commerce",Value="Commerce"}, 
+                    new SelectListItem {Text="Not Allowed",Value="Not Allowed"} 
+                    })
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.RadioButtonFor(model=>model.Gender,"Male")@Html.Label("Male")
+                </td>    
+                <td>
+                    @Html.RadioButtonFor(model => model.Gender, "Female")@Html.Label("Female")
+                </td>
+            </tr>
+            <tr>
+                <td style="width :100px ">
+                    @Html.Label("Date of Birth")
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.DateOfBirth)
+                </td>
+            </tr>
+
+            <tr>
+                <td style="width :150px ">
+                    @Html.Label("Present Address")
+                </td>
+                <td style="width :200px ">
+                    @Html.TextAreaFor(model => model.PresentAddress, new { style="width:600px"})
+                </td>
+            </tr>
+            <tr>
+                <td style ="width :150px ">
+                    
+                </td>
+                <td>
+                    <input class="btn btn-primary" type="submit" value=" Insert " style="width:100px" />
+                </td>
+            </tr>
+        </table>
+
+    }
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#DateOfBirth").datepicker();
+    });
+
+    </script>
+
+    @if (ViewBag.Message != null)
+    {
+        <script>
+            $(document).ready(function () {
+                alert("@ViewBag.Message");
+            });
+    
+
+</script>
+    }
+

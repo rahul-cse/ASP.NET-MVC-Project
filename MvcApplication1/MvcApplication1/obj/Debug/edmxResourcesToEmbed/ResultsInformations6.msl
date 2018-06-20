@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcDatabase1Model3StoreContainer" CdmEntityContainer="MvcDatabase1Entities3">
+    <EntitySetMapping Name="ResultDatabaseClass6">
+      <EntityTypeMapping TypeName="MvcDatabase1Model3.ResultDatabaseClass6">
+        <MappingFragment StoreEntitySet="ResultDatabaseClass6">
+          <ScalarProperty Name="Physical_Education" ColumnName="Physical_Education" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="Term" ColumnName="Term" />
+          <ScalarProperty Name="Bengali1st" ColumnName="Bengali1st" />
+          <ScalarProperty Name="English1st" ColumnName="English1st" />
+          <ScalarProperty Name="Mathematics" ColumnName="Mathematics" />
+          <ScalarProperty Name="Science" ColumnName="Science" />
+          <ScalarProperty Name="Bangladesh_and_Global_Studies" ColumnName="Bangladesh_and_Global_Studies " />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Drawing" ColumnName="Drawing" />
+          <ScalarProperty Name="ICT" ColumnName="ICT" />
+          <ScalarProperty Name="Bengali2nd" ColumnName="Bengali2nd" />
+          <ScalarProperty Name="English2nd" ColumnName="English2nd" />
+          <ScalarProperty Name="TotalMarks" ColumnName="TotalMarks" />
+          <ScalarProperty Name="Gpa" ColumnName="Gpa" />
+          <ScalarProperty Name="TotalSubject" ColumnName="TotalSubject" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

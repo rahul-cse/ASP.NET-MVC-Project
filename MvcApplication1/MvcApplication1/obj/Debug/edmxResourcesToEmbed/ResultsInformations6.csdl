@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MvcDatabase1Model3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ResultDatabaseClass6">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int64" Nullable="false" />
+    <Property Name="Term" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Bengali1st" Type="Int32" />
+    <Property Name="English1st" Type="Int32" />
+    <Property Name="Mathematics" Type="Int32" />
+    <Property Name="Science" Type="Int32" />
+    <Property Name="Bangladesh_and_Global_Studies" Type="Int32" />
+    <Property Name="Religion" Type="Int32" />
+    <Property Name="Drawing" Type="Int32" />
+    <Property Name="Physical_Education" Type="Int32" />
+    <Property Name="ICT" Type="Int32" />
+    <Property Name="Bengali2nd" Type="Int32" />
+    <Property Name="English2nd" Type="Int32" />
+    <Property Name="TotalMarks" Type="Int32" />
+    <Property Name="Gpa" Type="Double" />
+    <Property Name="TotalSubject" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MvcDatabase1Entities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ResultDatabaseClass6" EntityType="Self.ResultDatabaseClass6" />
+  </EntityContainer>
+</Schema>
